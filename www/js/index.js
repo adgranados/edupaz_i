@@ -46,4 +46,65 @@ var app = {
 
         console.log('Received Event: ' + id);
     }
+    // ContinuarEvent: function(next) {
+    //     var content = document.getElementById("Content");
+    //    $( "#result" ).load( "./" +  next);
+    // }
 };
+       function Load(url)
+       {
+         var parent = document.getElementById('Content');
+          var xhr = new XMLHttpRequest();
+          xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+              parent.innerHTML = xhr.responseText;
+              if(url=='./bienbenida.html'){
+                   $( "div" ).delay( 800 ).show( "easeInOutCubic", 2000, function() {           
+                      $( "img" ).delay( 800 ).show( "fold", 1000, function() {
+                            $( "button" ).show( "fade", 1000 );
+                      });
+
+                  });
+              }
+
+              if(url=='./acuerdos.html'){
+                  $( "img" ).delay( 800 ).show( "fold", 1000, function() {
+                            $( "button" ).show( "fade", 1000 );
+                  });
+                  $( "h1" ).delay( 800 ).show("fold", 1000);
+              }
+              if(url=='./rutaAprendizaje.html'){
+                   $( "h1" ).delay( 200 ).slideDown( "fast", function() {           
+                       $( "img" ).show( "drop", 1000);
+                       $( "h2" ).show( "drop", 1000, function() {
+                            $( ".speech-bocadillo" ).show( "blind", 1000 ,function() {
+                                $( "button" ).show( "fade", 1000)
+                            });
+                        });
+                   });
+              }
+              if(url=='./politica.html'){
+                   $( "h1" ).delay( 200 ).slideDown( "fast", function() {           
+                       $( "img" ).show( "drop", 1000);
+                       $( "h2" ).show( "drop", 1000, function() {
+                            $( ".circle-main" ).show( "fold", 1000);
+                        });
+                   });
+              }
+              if(url=='./introducion.html'){
+                $( "img" ).delay( 200 ).slideDown( "fast", function() {           
+                   $( ".circle-main" ).show( "drop", 1000);
+                       $( ".speech-bubble" ).show( "fold", 1000);
+                });
+              }
+            }
+          }
+          xhr.open("GET", url, true);
+          xhr.setRequestHeader('Content-Type', 'text/html');
+          xhr.send();
+      }
+      $( document ).ready(function() {
+              $( "img" ).show( "fold", 2000, function() {
+                    $( "button" ).show( "fade", 1000 );
+              });
+      });
