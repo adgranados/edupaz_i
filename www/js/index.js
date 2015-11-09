@@ -67,7 +67,7 @@ var app = {
                   });
               }
 
-              if(url=='./acuerdos.html'){
+              if(url=='./acuerdos.html' || url=='./accesotirerra.html'){
                   $( "img" ).delay( 800 ).show( "fold", 1000, function() {
                             $( "button" ).show( "fade", 1000 );
                   });
@@ -91,7 +91,7 @@ var app = {
                         });
                    });
               }
-              if(url=='./introducion.html'){
+              if(url=='./introducion.html' || url=='./vision.html' || url=='./vision1.html'){
                 $( "img" ).delay( 200 ).slideDown( "fast", function() {           
                    $( ".circle-main" ).show( "drop", 1000);
                        $( ".speech-bubble" ).show( "fold", 1000);
