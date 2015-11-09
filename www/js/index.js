@@ -37,14 +37,11 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
+      
+              $( "img" ).show( "fold", 2000, function() {
+                    $( "button" ).show( "fade", 1000 );
+              });
+    
     }
     // ContinuarEvent: function(next) {
     //     var content = document.getElementById("Content");
@@ -67,7 +64,7 @@ var app = {
                   });
               }
 
-              if(url=='./acuerdos.html' || url=='./accesotirerra.html'){
+              if(url=='./acuerdos.html' || url=='./accesotirerra.html' || url=='./pilares.html'){
                   $( "img" ).delay( 800 ).show( "fold", 1000, function() {
                             $( "button" ).show( "fade", 1000 );
                   });
@@ -83,7 +80,7 @@ var app = {
                         });
                    });
               }
-              if(url=='./politica.html'){
+              if(url=='./politica.html' || url=='./accesotirerra.html'){
                    $( "h1" ).delay( 200 ).slideDown( "fast", function() {           
                        $( "img" ).show( "drop", 1000);
                        $( "h2" ).show( "drop", 1000, function() {
@@ -91,6 +88,8 @@ var app = {
                         });
                    });
               }
+
+
               if(url=='./introducion.html' || url=='./vision.html' || url=='./vision1.html'){
                 $( "img" ).delay( 200 ).slideDown( "fast", function() {           
                    $( ".circle-main" ).show( "drop", 1000);
@@ -103,8 +102,4 @@ var app = {
           xhr.setRequestHeader('Content-Type', 'text/html');
           xhr.send();
       }
-      $( document ).ready(function() {
-              $( "img" ).show( "fold", 2000, function() {
-                    $( "button" ).show( "fade", 1000 );
-              });
-      });
+      
