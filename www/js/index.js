@@ -34,6 +34,9 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+        $( "button" ).click(function() {
+          alert( "Handler for .click() called." );
+        });
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -43,10 +46,7 @@ var app = {
 
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
-              // $( "img" ).show( "fold", 2000, function() {
-              //       $( "button" ).show( "fade", 1000 );
-              // });
-        $( "button" ).onClick(alert('gdgd'));
+
         console.log('Received Event: ' + id);
     }
     // ContinuarEvent: function(next) {
@@ -108,4 +108,8 @@ var app = {
       //     xhr.setRequestHeader('Content-Type', 'text/html');
       //     xhr.send();
       // }
-      
+      // $( document ).ready(function() {
+      //         $( "img" ).show( "fold", 2000, function() {
+      //               $( "button" ).show( "fade", 1000 );
+      //         });
+      // });
