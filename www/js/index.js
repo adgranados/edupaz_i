@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-var app = {
+/*var app = {
     // Application Constructor
     initialize: function() {
         this.bindEvents();
@@ -34,9 +34,7 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-        $( "button" ).click(function() {
-          alert( "Handler for .click() called." );
-        });
+
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -53,7 +51,7 @@ var app = {
     //     var content = document.getElementById("Content");
     //    $( "#result" ).load( "./" +  next);
     // }
-};
+};*/
       //  function Load(url)
       //  {
       //    var parent = document.getElementById('Content');
@@ -113,3 +111,10 @@ var app = {
       //               $( "button" ).show( "fade", 1000 );
       //         });
       // });
+
+$(function(){
+    alert('html');
+     $( "#siguiente" ).click(function() {
+          alert('./bienbenida.html')
+        });
+})
