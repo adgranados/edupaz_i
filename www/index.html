@@ -25,19 +25,27 @@
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <meta id="viewport" name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+<!--      <meta id="viewport" name="viewport" content="width=500, initial-scale=1">  -->
         <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <!--[if lt IE 9]>
+          <script type="text/javascript" src="js/PIE_IE678.js"></script>
+        <![endif]-->
+        <!--[if IE 9]>
+          <script type="text/javascript" src="js/PIE_IE9.js"></script>
+        <![endif]-->
         <title>Ruta de Paz</title>
     </head>
     <body>
+
         <div class="app">
            <!--  <h1>PhoneGap</h1> -->
             <div id="deviceready">
                 <div id="Content">
                  <div style="background-color: #95E3C3;" class="blink">
                     <div class="Content">
-                       <img src="./img/rutadepaz.fw.png" style="width: 46%;margin-left: 28%; position:absolute; left:-100vw; top:50vh" />
-                       <button id="siguiente" class="btn" style="margin-top: 25vh; margin-left: 27vw;position:absolute; top:60vh;  left:-100vw ">
+                       <img id="mapa" src="./img/rutadepaz.fw.png"/>
+                       <button id="continuar1" class="btn">
                          Continuar
                        </button> 
                     </div> 
@@ -50,5 +58,33 @@
         <script src="js/jquery-ui.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+         <script type="text/javascript">
+            if (!Array.prototype.filter)
+            {
+              Array.prototype.filter = function(fun /*, thisp*/)
+              {
+                var len = this.length;
+                if (typeof fun != "function")
+                  throw new TypeError();
+
+                var res = new Array();
+                var thisp = arguments[1];
+                for (var i = 0; i < len; i++)
+                {
+                  if (i in this)
+                  {
+                    var val = this[i]; // in case fun mutates this
+                    if (fun.call(thisp, val, i, this))
+                      res.push(val);
+                  }
+                }
+
+                return res;
+              };
+            }
+          </script>
+          <script src="js/tokenizer.js"></script>
+          <script src="js/parser.js"></script>
+          <script src="js/vminpoly.js"></script>
     </body>
 </html>

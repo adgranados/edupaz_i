@@ -52,8 +52,15 @@
     //    $( "#result" ).load( "./" +  next);
     // }
 };*/
-       function Load(url)
-       {
+
+ var windows_width = $( window ).width();
+ var windows_height = $( window ).height();
+ // document.getElementById("viewport").setAttribute("content", "width=" + windows_width.toString());
+
+if (screen.width < 410) {
+  $("#viewport").attr("content", "width=410");
+}
+       function Load(url) {
          var parent = document.getElementById('Content');
           var xhr = new XMLHttpRequest();
           xhr.onreadystatechange = function() {
@@ -66,10 +73,10 @@
                             .animate({"left": 0 },1000,"easeOutBounce")
                          $(".speech-bubble")
                             .delay( 1200 )
-                            .animate({"top": "23vh" },1000,"easeOutBounce");
+                            .animate({"top": 13*windows_height/100 },1000,"easeOutBounce");
                         $("button")
                             .delay( 200 )
-                            .animate({"top": "78vh"},1000); 
+                            .animate({"top": 52*windows_height/100},1000); 
                   });
               }
 
@@ -111,29 +118,53 @@
                        $( ".circle-main" ).delay( 200 ).animate({"top": 0 },1000,"easeOutBounce");
                 });
               }
+                   if (!Array.prototype.filter)
+                    {
+                      Array.prototype.filter = function(fun /*, thisp*/)
+                      {
+                        var len = this.length;
+                        if (typeof fun != "function")
+                          throw new TypeError();
+
+                        var res = new Array();
+                        var thisp = arguments[1];
+                        for (var i = 0; i < len; i++)
+                        {
+                          if (i in this)
+                          {
+                            var val = this[i]; // in case fun mutates this
+                            if (fun.call(thisp, val, i, this))
+                              res.push(val);
+                          }
+                        }
+
+                        return res;
+                      };
+                    }
             }
           }
           xhr.open("GET", url, true);
           xhr.setRequestHeader('Content-Type', 'text/html');
           xhr.send();
       }
-            $( document ).ready(function() {
-              $( "img" ).show( "fold", 2000, function() {
-                    $( "button" ).show( "fade", 1000 );
-              });
-      });
+
 
 $(function(){
+    if (window.PIE) {
+        $('.rounded').each(function() {
+            PIE.attach(this);
+        });
+    }
     $("img")
         .delay( 200 )
         .stop()
         .animate({"left": 0 },1000,"easeOutBounce")
         .delay( 1200 )
-        .animate({"top":"22vh"},1000); 
-    $("#siguiente")
+        .animate({"top": 22*windows_height/100 },1000); 
+    $("#continuar1")
         .delay( 2400 )
         .animate({"left":0},1000); 
-     $( "#siguiente" ).click(function() {
+     $( "#continuar1" ).click(function() {
           Load('./bienbenida.html');
      });
 
