@@ -60,31 +60,43 @@
             if (xhr.readyState == 4 && xhr.status == 200) {
               parent.innerHTML = xhr.responseText;
               if(url=='./bienbenida.html'){
-                   $( "div" ).delay( 800 ).show( "easeInOutCubic", 2000, function() {           
-                      $( "img" ).delay( 800 ).show( "fold", 1000, function() {
-                            $( "button" ).show( "fade", 1000 );
-                      });
-
+                   $( ".circle-main" ).delay( 800 ).show( "fade", 500, function() {           
+                         $("img")
+                            .delay( 200 )
+                            .animate({"left": 0 },1000,"easeOutBounce")
+                         $(".speech-bubble")
+                            .delay( 1200 )
+                            .animate({"top": "23vh" },1000,"easeOutBounce");
+                        $("button")
+                            .delay( 200 )
+                            .animate({"top": "78vh"},1000); 
                   });
               }
 
               if(url=='./acuerdos.html' || url=='./accesotirerra.html' || url=='./pilares.html'){
-                  $( "img" ).delay( 800 ).show( "fold", 1000, function() {
-                            $( "button" ).show( "fade", 1000 );
+                  $( "img" ).delay( 800 ).animate({"top": 0 },1000,"easeOutBounce", function() {
+                            $( "button" ).delay( 2200 ).animate({"top": 0 },1000,"easeOutBounce" );
                   });
-                  $( "h1" ).delay( 800 ).show("fold", 1000);
+                  $( "h1" ).delay( 800 ).animate({"top": 0 },1000,"easeOutBounce");
               }
               if(url=='./rutaAprendizaje.html'){
-                   $( "h1" ).delay( 200 ).slideDown( "fast", function() {           
-                       $( "img" ).show( "drop", 1000);
-                       $( "h2" ).show( "drop", 1000, function() {
-                            $( ".speech-bocadillo" ).show( "blind", 1000 ,function() {
-                                $( "button" ).show( "fade", 1000)
+                   $( "h1" ).delay( 200 ).animate({"left": 0 },1000,"easeOutBounce", function() {           
+                       $( "img" ).animate({"right": 0 },1000,"easeOutBounce");
+                       $( "h2" ).animate({"right": 0 },1000,"easeOutBounce", function() {
+                            $( ".speech-bocadillo" ).animate({"left": 0 },1000,"easeOutBounce",function() {
+                                $( "button" ).animate({"top": 0 },1000,"easeOutBounce")
                             });
                         });
                    });
               }
-              if(url=='./politica.html' || url=='./accesotirerra.html'){
+              if(url=='./accesotirerra.html'){
+                   $( ".Contenido" ).delay( 200 ).animate({"top": 0 },1000,"easeOutBounce", function() {           
+                       $( "img" ).animate({"top": 0 },1000,"easeOutBounce", function() {
+                            $( ".circle-main" ).animate({"top": 0 },1000,"easeOutBounce");
+                        });
+                   });
+              }
+              if( url=='./politica.html'){
                    $( "h1" ).delay( 200 ).slideDown( "fast", function() {           
                        $( "img" ).show( "drop", 1000);
                        $( "h2" ).show( "drop", 1000, function() {
@@ -93,11 +105,10 @@
                    });
               }
 
-
               if(url=='./introducion.html' || url=='./vision.html' || url=='./vision1.html'){
-                $( "img" ).delay( 200 ).slideDown( "fast", function() {           
-                   $( ".circle-main" ).show( "drop", 1000);
-                       $( ".speech-bubble" ).show( "fold", 1000);
+                $( ".speech-bubble" ).delay( 200 ).animate({"top": 0 },1000,"easeOutBounce", function() {           
+                   $( "img" ).animate({"left": 0 },1000,"easeOutBounce");
+                       $( ".circle-main" ).delay( 200 ).animate({"top": 0 },1000,"easeOutBounce");
                 });
               }
             }
@@ -106,18 +117,24 @@
           xhr.setRequestHeader('Content-Type', 'text/html');
           xhr.send();
       }
-      $( document ).ready(function() {
+            $( document ).ready(function() {
               $( "img" ).show( "fold", 2000, function() {
                     $( "button" ).show( "fade", 1000 );
               });
       });
 
 $(function(){
-
-    var scrolly = window.scrollY;
-    var windows_width = $( window ).width();
-    alert(windows_width + '-' + scrolly);
+    $("img")
+        .delay( 200 )
+        .stop()
+        .animate({"left": 0 },1000,"easeOutBounce")
+        .delay( 1200 )
+        .animate({"top":"22vh"},1000); 
+    $("#siguiente")
+        .delay( 2400 )
+        .animate({"left":0},1000); 
      $( "#siguiente" ).click(function() {
-          Load('./bienbenida.html')
+          Load('./bienbenida.html');
      });
+
 })
