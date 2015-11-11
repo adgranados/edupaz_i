@@ -267,17 +267,14 @@ position: relative;
 padding: 2vw;
 }
 #mapa{
-left:-100vw;
-top:60vw;
+margin-left:-100%;
 width: 46%;
-margin-left: 28%;
-position:absolute;
+margin-top: 60%;
 }
 #continuar1{
-margin-top: 47vw;
-margin-left: 27vw;
-position:absolute;
-left:-100vw; 
+margin-top: 5%;
+margin-left: -100%;
+width: 50%;
 }
 #interrogacion2{
 background-color: #95E3C3;
@@ -302,4 +299,9 @@ width: 78%;
 margin-left: 7%;
 left:-100vw;
 position:absolute;
+}
+#bottom2{
+margin-left: 27vw;
+position:absolute;
+top:200vh;
 }

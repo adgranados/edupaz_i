@@ -158,12 +158,12 @@ $(function(){
     $("img")
         .delay( 200 )
         .stop()
-        .animate({"left": 0 },1000,"easeOutBounce")
+        .animate({"margin-left": 27*windows_width/100 },1000,"easeOutBounce")
         .delay( 1200 )
-        .animate({"top": 22*windows_height/100 },1000); 
+        .animate({"margin-top": 12*windows_height/100 },1000); 
     $("#continuar1")
         .delay( 2400 )
-        .animate({"left":0},1000); 
+        .animate({"margin-left": 25*windows_width/100 },1000); 
      $( "#continuar1" ).click(function() {
           Load('./bienbenida.html');
      });
