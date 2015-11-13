@@ -155,6 +155,7 @@ left: 0;
 bottom: 0;
 right: 0;
 top: 15%;
+font-size: 12vw;
 }
 .Title-text {
  font-family: Chaparral Pro;
@@ -406,4 +407,57 @@ display: none;
 margin-top: 10vw;
 text-align: center;
 width: 100vw;
+}
+#circle-main5{
+  display: none; 
+  background-color: #7EDAD4; 
+  margin-top: 4vw; 
+  border: solid 2vw #FFF; 
+  color: #FFF; 
+  padding: 4vw 4vw 0vw 4vw;
+}
+#img5{
+  display: none; 
+  width: 29vw; 
+  margin-left: 35vw; 
+  margin-top: 27vw;
+}
+#speech-bubble6{
+border-color: #FBE771; 
+width: 90%; 
+margin-left: 5%; 
+position:absolute; 
+top:200vw; 
+margin-top: 16vw;
+}
+#img6{
+width: 40%; 
+margin-left: 4%; 
+position:absolute; 
+left:-100vw; 
+margin-top: 99vw; 
+}
+#bottom6{
+margin-left: 27vw;
+margin-top: 200vw;
+}
+#circle-main6-1{
+background-color: #7EDAD4; 
+border: solid 2vw #FFF; 
+color: #FFF; 
+margin-top: 119vw; 
+padding: 4vw 4vw 0vw 4vw; 
+margin-left: 41vw; 
+position:absolute; 
+top:200vw;
+}
+#circle-main6-2{
+background-color: #7EDAD4; 
+border: solid 2vw #FFF; 
+color: #FFF; 
+margin-top: 119vw; 
+padding: 4vw 4vw 0vw 4vw;
+margin-left: 70vw; 
+position:absolute; 
+top:200vw;
 }
