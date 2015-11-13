@@ -67,31 +67,41 @@ if (screen.width < 410) {
             if (xhr.readyState == 4 && xhr.status == 200) {
               parent.innerHTML = xhr.responseText;
               if(url=='./bienbenida.html'){
-                   $( ".circle-main" ).delay( 800 ).show( "fade", 500, function() {           
+                   $( "#interrogacion2" ).delay( 800 ).show( "fade", 500, function() {           
                          $("img")
                             .delay( 200 )
-                            .animate({"left": 0 },1000,"easeOutBounce")
+                            .stop()
+                            .animate({"margin-left": 7*windows_width/100 },1000,"easeOutBounce");
                          $(".speech-bubble")
+                            .stop()
                             .delay( 1200 )
-                            .animate({"top": 13*windows_height/100 },1000,"easeOutBounce");
+                            .animate({"margin-top": 13*windows_width/100 },1000,"easeOutBounce");
                         $("button")
-                            .delay( 200 )
-                            .animate({"top": 52*windows_height/100},1000); 
+                            .stop()
+                            .delay( 2200 )
+                            .animate({"margin-top": -22*windows_width/100},1000); 
                   });
               }
 
               if(url=='./acuerdos.html' || url=='./accesotirerra.html' || url=='./pilares.html'){
-                  $( "img" ).delay( 800 ).animate({"top": 0 },1000,"easeOutBounce", function() {
-                            $( "button" ).delay( 2200 ).animate({"top": 0 },1000,"easeOutBounce" );
+                  $( "img" ).delay( 200 ).animate({"top": 0 },1000,"easeOutBounce", function() {
+                            $( "button" ).delay( 1200 ).animate({"top": 0 },1000,"easeOutBounce" );
                   });
                   $( "h1" ).delay( 800 ).animate({"top": 0 },1000,"easeOutBounce");
               }
               if(url=='./rutaAprendizaje.html'){
                    $( "h1" ).delay( 200 ).animate({"left": 0 },1000,"easeOutBounce", function() {           
-                       $( "img" ).animate({"right": 0 },1000,"easeOutBounce");
+                       $( "#img3-1" ).animate({"right": 0 },1000,"easeOutBounce", function() {
+                         $( "#img3-2" ).animate({"left": 0 },1000,"easeOutBounce");
+                       });
                        $( "h2" ).animate({"right": 0 },1000,"easeOutBounce", function() {
-                            $( ".speech-bocadillo" ).animate({"left": 0 },1000,"easeOutBounce",function() {
-                                $( "button" ).animate({"top": 0 },1000,"easeOutBounce")
+                            $( ".speech-bocadillo" )
+                            .delay( 1200 )
+                            .animate({"left": 0 },1000,"easeOutBounce",function() {
+                              $("button")
+                              .stop()
+                              .delay( 200 )
+                              .animate({"margin-top": 118*windows_width/100},1000); 
                             });
                         });
                    });
@@ -118,29 +128,6 @@ if (screen.width < 410) {
                        $( ".circle-main" ).delay( 200 ).animate({"top": 0 },1000,"easeOutBounce");
                 });
               }
-                   if (!Array.prototype.filter)
-                    {
-                      Array.prototype.filter = function(fun /*, thisp*/)
-                      {
-                        var len = this.length;
-                        if (typeof fun != "function")
-                          throw new TypeError();
-
-                        var res = new Array();
-                        var thisp = arguments[1];
-                        for (var i = 0; i < len; i++)
-                        {
-                          if (i in this)
-                          {
-                            var val = this[i]; // in case fun mutates this
-                            if (fun.call(thisp, val, i, this))
-                              res.push(val);
-                          }
-                        }
-
-                        return res;
-                      };
-                    }
             }
           }
           xhr.open("GET", url, true);
@@ -160,7 +147,7 @@ $(function(){
         .stop()
         .animate({"margin-left": 27*windows_width/100 },1000,"easeOutBounce")
         .delay( 1200 )
-        .animate({"margin-top": 12*windows_height/100 },1000); 
+        .animate({"margin-top": 15*windows_width/100 },1000); 
     $("#continuar1")
         .delay( 2400 )
         .animate({"margin-left": 25*windows_width/100 },1000); 
